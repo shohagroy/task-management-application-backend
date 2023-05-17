@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import cors from "cors";
+import taskRouter from "./modules/tasks/task.route";
 
 const app: Application = express();
 
@@ -14,5 +15,7 @@ app.get("/", (req, res) => {
     massage: "task management application server is running",
   });
 });
+
+app.use("/api/v1/tasks", taskRouter);
 
 export default app;

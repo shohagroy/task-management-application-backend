@@ -5,6 +5,7 @@ const taskSchema = new Schema<ITask>({
   text: {
     type: String,
     required: true,
+    unique: true,
   },
   isComplited: {
     type: Boolean,
@@ -15,3 +16,6 @@ const taskSchema = new Schema<ITask>({
     required: true,
   },
 });
+
+const Task = model<ITask>("Task", taskSchema);
+export default Task;
